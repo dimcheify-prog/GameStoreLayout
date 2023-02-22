@@ -1,0 +1,42 @@
+.banner
+    &-img
+        background-color: $color-blue-dark
+        grid-column: full-start / col-end 4
+        // с помощью grid можно сделать много колонок и строк и позиционировать картинки по ним
+        display: grid
+        grid-template-columns: repeat(16, 1fr)
+        grid-template-rows: repeat(24, 1fr)
+        background: url("../img/banner-back.png") center / cover no-repeat 
+        @include respond(tab-port)
+            grid-column: full-start / full-end
+        &__img-1
+            width: 100%
+            grid-column: 3 / 15
+            grid-row: 3 / 12
+            @include respond(tab-port)
+                grid-column: 2 / 10
+        &__img-2
+            width: 100%
+            grid-column: 5 / -1
+            grid-row: 10 / 23
+            transform: translateX(4rem)
+            @include respond(tab-port)
+                grid-column: 8 / 15
+    &-text
+        background-color: $color-blue-dark
+        grid-column: col-start 5 / full-end
+        // flexbox можно использовать вместе с grid
+        // display: flex
+        // flex-direction: column
+        // justify-content: center
+        // align-items: flex-start
+        display: grid
+        align-content: center
+        justify-items: start
+        padding: 0 4vw
+        @include respond(tab-port)
+            grid-column: 1 / -1
+            grid-row: 5 /6
+            padding: 5rem
+        &__text
+            margin-bottom: 4rem

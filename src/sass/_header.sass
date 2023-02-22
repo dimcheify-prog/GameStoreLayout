@@ -1,0 +1,43 @@
+.header
+    background-color: $color-blue-dark
+    grid-column: full-start / col-end 6
+    display: grid
+    // чтобы при сужении экрана элементы не склеивались, добавим minmax
+    grid-template-rows: 1fr min-content minmax(10rem, min-content) 1fr
+    padding: 5rem 0 5rem 6rem
+    background: url('../img/head__left-side.png')
+    @include respond(tab-port)
+        grid-column: full-start / full-end
+
+    &__btn
+        align-self: start
+        justify-self: start
+    &__line-text
+        font-size: 1.6rem
+        color: $color-grey-dark
+        font-weight: 700
+        display: grid
+        grid-template-columns: 1fr max-content 1fr
+        grid-column-gap: 2rem
+        align-items: center
+        &::before, &::after
+            content: ""
+            height: .1rem
+            display: block
+            background-color: $color-grey-dark
+    &__img 
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        justify-items: center
+        grid-gap: 2rem
+        img
+            height: 2.5rem
+            // красим png изображение
+            filter: brightness(70%)
+
+.logo
+    display: block
+    margin-bottom: 8rem
+    &__img
+        display: block
+        margin: 0 auto

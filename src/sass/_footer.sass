@@ -1,0 +1,23 @@
+.footer
+    background-color: $color-blue-dark
+    grid-column: full-start / full-end
+    padding: 8rem 3rem 
+    border-top: .3rem solid $color-grey-light
+    
+.nav
+    &__list
+        list-style: none
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+        justify-items: center
+        grid-gap: 3.5rem
+    &__link
+        &:link, &:visited
+            font-size: 1.6rem
+            font-weight: 300
+            text-transform: uppercase
+            color: $color-grey-light
+            text-decoration: none
+            text-align: center
+        &:hover, &:active
+            color: $color-green-dark 
